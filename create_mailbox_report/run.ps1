@@ -6,7 +6,7 @@ param($Request, $TriggerMetadata)
 Write-Output "PowerShell HTTP trigger function processed a request."
 
 # Parse the request body for JSON payload
-$requestBody = Get-Content -Raw -InputObject $Request.Body | ConvertFrom-Json
+$requestBody = $Request.Body | ConvertFrom-Json
 
 # Retrieve run_id, customer_id, and tenant_id from the request body
 $run_id = $requestBody.run_id
